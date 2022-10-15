@@ -1,0 +1,19 @@
+.container1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    position: absolute;
+    background-color: bisque;
+    height: 100vh;
+    width: 100%;
+
+}
+.container-chat{
+    height: 80%;
+    background: white;
+    width: 30%;
+    margin: auto;
+    position: absolute;
+    right: 0;
+}
