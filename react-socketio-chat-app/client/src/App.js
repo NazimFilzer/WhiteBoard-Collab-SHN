@@ -2,10 +2,12 @@ import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
+import {TradingViewStockChartWidget} from 'react-tradingview-components'
 
 const socket = io.connect("http://localhost:3001");
 
 function App() {
+
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
@@ -19,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+       
       {!showChat ? (
         <div className="joinChatContainer">
           <h3>Join A Chat</h3>
