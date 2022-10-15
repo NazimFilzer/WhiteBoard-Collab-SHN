@@ -49,32 +49,6 @@ function App() {
         <Chat socket={socket} username={username} room={room} />
       )}
 
-           {!showChat ? (
-        <div className="joinChatContainer">
-          <div className="joinbox">
-          <h3>Join A Chat</h3>
-          <input
-            type="text"
-            placeholder="John..."
-            onChange={(event) => {
-              setUsername(event.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="Room ID..."
-            onChange={(event) => {
-              setRoom(event.target.value);
-            }}
-          />
-          <button onClick={joinRoom}>Join A Room</button>
-          </div></div>
-        
-        
-        
-      ) : (
-        <Chat socket={socket} username={username} room={room} />
-      )}
       </div>
     </div>
   );
