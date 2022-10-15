@@ -1,0 +1,17 @@
+{
+  "name": "whiteboard-sharing-app-server",
+  "version": "1.0.0",
+  "description": "this is the white board sharing app server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Whoo",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.3"
+  }
+}
