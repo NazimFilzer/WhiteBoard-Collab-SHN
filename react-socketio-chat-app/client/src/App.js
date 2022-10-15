@@ -20,7 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="twoboxes">
+
+      <div className="boxes">
       {!showChat ? (
         <div className="joinChatContainer">
           <div className="joinbox">
