@@ -15,11 +15,14 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
+
   console.log(`User Connected: ${socket.id}`);
 
   socket.on("join_room", (data) => {
     socket.join(data);
     console.log(`User with ID: ${socket.id} joined room: ${data}`);
+    socket.to(data.room).emit("back", "Hello")
+    // socket.to(data.room).emit("receive_message", `User with ID: ${socket.id} joined room: ${data}`);
   });
 
   socket.on("send_message", (data) => {
@@ -29,10 +32,10 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User Disconnected", socket.id);
   });
-   socket.on('canvas-data', (data) => {
-        socket.broadcast.emit('canvas-data', data);
+  socket.on('canvas-data', (data) => {
+    socket.broadcast.emit('canvas-data', data);
 
-    });
+  });
 });
 
 server.listen(3001, () => {
