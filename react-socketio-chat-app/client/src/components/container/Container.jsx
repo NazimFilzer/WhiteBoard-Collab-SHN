@@ -1,6 +1,5 @@
 import React from 'react';
 import Board from '../board/Board';
-import {TradingViewStockChartWidget} from 'react-tradingview-components'
 import './style.scss';
 
 class Container extends React.Component
@@ -57,13 +56,7 @@ class Container extends React.Component
                 </div>
 
                 <div class="board-container">
-                       <div className='setbehind'>
-                        <TradingViewStockChartWidget 
-              symbol='NASDAQ:AAPL'
-              theme='Dark' 
-              range='12m'
-            />
-                 </div>
+                       
                     <Board color={this.state.color} size={this.state.size}>
               </Board>
               

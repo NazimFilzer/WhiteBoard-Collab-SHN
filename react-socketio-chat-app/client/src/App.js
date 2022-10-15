@@ -2,7 +2,6 @@ import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
-import {TradingViewStockChartWidget} from 'react-tradingview-components'
 
 const socket = io.connect("http://localhost:3001");
 
