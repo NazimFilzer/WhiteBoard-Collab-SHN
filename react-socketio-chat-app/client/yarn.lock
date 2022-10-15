@@ -9352,7 +9352,12 @@
     "prop-types" "15.7.2"
     "simple-update-in" "2.2.0"
 
-"react@*", "react@^16.8.6", "react@^17.0.2", "react@>= 16", "react@17.0.2":
+"react-tradingview-components@^2.0.1":
+  "integrity" "sha512-lVoMygjHO1lNu5BAui6t0xR3U6a32vzka5PPRwtamIj/z6SxDUf/wJ0dAXDCGwCnFm8W+umJO8KcSTlRfZn/tg=="
+  "resolved" "https://registry.npmjs.org/react-tradingview-components/-/react-tradingview-components-2.0.1.tgz"
+  "version" "2.0.1"
+
+"react@*", "react@^16.0.0", "react@^16.8.6", "react@^17.0.2", "react@>= 16", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
