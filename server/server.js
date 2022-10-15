@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const http = require("http");
 const cors = require("cors");
@@ -66,3 +67,38 @@ const PORT = process.env.PORT || 5000;
 server.listen(PORT, () =>
     console.log(`server is listening on http://localhost:${PORT}`)
 );
+=======
+var app = require('express')();
+var http = require('http').createServer(app);
+var io = require('socket.io')(http,{
+     cors: {
+    origin: ["http://localhost:3000","http://localhost:5000"],
+    methods: ["GET", "POST","PUT"],
+    
+    credentials: true
+
+  }
+},{
+  allowEIO3: true // false by default
+});
+
+io.on('connection', (socket)=> {
+      console.log('User Online');
+
+      socket.on('canvas-data', (data)=> {
+            socket.broadcast.emit('canvas-data', data);
+            
+      });
+      socket.on("chat",(payload) =>{
+            io.emit("chat",payload);
+      });
+    
+});
+
+
+
+var server_port =  5000;
+http.listen(server_port, () => {
+    console.log("Started on : "+ server_port);
+})
+>>>>>>> b056fd1c712d91da70d0f8f611e9d12083137669
