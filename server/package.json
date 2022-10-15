@@ -1,7 +1,7 @@
 {
-  "name": "whiteboard-sharing-app-server",
+  "name": "WhiteBoard",
   "version": "1.0.0",
-  "description": "this is the white board sharing app server",
+  "description": "A Seamless Collaboration WhiteBoard",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
