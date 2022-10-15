@@ -1,0 +1,33 @@
+.container {
+  
+    width: 80%;
+    height: 90%;
+    background: linear-gradient(45deg, #03A9F4, #4CAF50);
+}
+
+.color-picker-container {
+    text-align: center;
+    display: inline;
+    color: white;
+}
+
+.brushsize-container {
+    display: inline;
+    color: white;
+    margin-left: 12px;
+}
+
+.tools-section {
+    text-align: center;
+}
+
+.board-container {
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    margin-top: 1%;
+    background: rgba(255, 255, 255, 0.491) ;
+    background-image: url("../../assets/1158030.jpg");
+  
+    
+}
