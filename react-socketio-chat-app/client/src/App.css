@@ -9,12 +9,14 @@
   background: url(/src/img/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  
+
 }
+
 body {
   margin: 0%;
   padding: 0%;
 }
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .joinChatContainer {
@@ -25,31 +27,34 @@ body {
   padding: 10px;
   border-radius: 20px;
 }
-.joinbox{
-    display: flex;
-      flex-direction: column;
-      text-align: center;
-        background: #1b1f24eb;
-        padding: 0px 30px 30px 30px;
-        border-radius: 20px;
+
+.joinbox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: #1b1f24eb;
+  padding: 0px 30px 30px 30px;
+  border-radius: 20px;
 }
-.joinbox h3{
+
+.joinbox h3 {
   color: #fff;
 }
-.twoboxes{
 
-}
-.boxes{
+.twoboxes {}
+
+.boxes {
   width: 100%;
   height: 100%;
   background-color: #121418d2;
-    display: flex;
-      flex-direction: row;
-      text-align: center;
-      align-items: center;
-        justify-content: center;
-  
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
 }
+
 .joinChatContainer h3 {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -57,6 +62,7 @@ body {
   border-radius: 20px 20px 0px 0px;
   padding: 10px;
 }
+
 .joinChatContainer input {
   width: 290px;
   height: 30px;
@@ -87,15 +93,16 @@ body {
 }
 
 .chat-window {
-    width: 300px;
-      height: 480px;
-      background: #263238;
-      border-radius: 9px;
+  width: 300px;
+  height: 100%;
+  background: #263238;
+  border-radius: 9px;
 }
 
 .chat-window p {
   margin: 0;
 }
+
 .chat-window .chat-header {
   height: 45px;
   border-radius: 6px;
@@ -103,6 +110,7 @@ body {
   position: relative;
   cursor: pointer;
 }
+
 .chat-window .chat-header p {
   display: block;
   padding: 0 1em 0 2em;
@@ -112,17 +120,18 @@ body {
 }
 
 .chat-window .chat-body {
-  height: calc(505px - (45px + 70px));
+  height: calc(104% - (45px + 70px));
   border: 1px solid #263238;
   background: #fff;
-    place-items: center;
-      background: url(/src/img/chat.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      
+  place-items: center;
+  background: url(/src/img/chat.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
 
   position: relative;
 }
+
 .chat-window .chat-body .message-container {
   width: 100%;
   height: 100%;
@@ -133,6 +142,7 @@ body {
 .chat-window .chat-body .message-container::-webkit-scrollbar {
   display: none;
 }
+
 .chat-window .chat-body .message {
   height: auto;
   padding: 10px;
@@ -143,13 +153,12 @@ body {
 width: auto;
   height: auto;
   min-height: 35px;
-  max-width: 130px;
+  min-width: 50px;
   background-color: #b3b3b357;
-  border-radius: 5px;
+  border-radius: 10px 9px 21px 0px;
   color: white;
   font-size: .9rem;
   display: flex;
-  align-items: center;
   margin-right: 5px;
   margin-left: 5px;
   padding-right: 17px;
@@ -157,14 +166,18 @@ width: auto;
   overflow-wrap: break-word;
   word-break: break-word;
 }
-
+.message-content{
+  padding-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
 #you {
   justify-content: flex-start;
 }
 
-#you .message-content {
-  justify-content: flex-start;
-}
+
 
 #you .message-meta {
   justify-content: flex-start;
@@ -194,13 +207,14 @@ width: auto;
 .chat-window .chat-body .message .message-meta {
   display: flex;
   font-size: 12px;
+  color: #9a9a9a;
 }
 
 .chat-window .chat-footer {
   height: 40px;
-background: #a6a6a600;
+  background: #a6a6a600;
   color: #fff;
-    border-top: none;
+  border-top: none;
   display: flex;
 }
 
@@ -211,8 +225,8 @@ background: #a6a6a600;
   padding: 0 0.7em;
   font-size: 1em;
   border-right: 1px dotted #607d8b;
-      background: #fff0;
-color: #fff;
+  background: #fff0;
+  color: #fff;
   outline: none;
   font-family: "Open Sans", sans-serif;
 }
@@ -233,11 +247,13 @@ color: #fff;
 .chat-window .chat-footer button:hover {
   color: #43a047;
 }
+
 .hide {
   opacity: 0 !important;
 }
-.main-page{
-width: 90%;
+
+.main-page {
+  width: 90%;
   height: 76%;
   background-color: #222e3e70;
   display: flex;
@@ -254,10 +270,11 @@ width: 90%;
   position: fixed;
   border: 1px solid #ffffff1a;
 }
-.nav{
+
+.nav {
   display: flex;
   flex-direction: row;
-  top:0;
+  top: 0;
   width: 100%;
   height: 72px;
   background: #121418;
@@ -267,6 +284,18 @@ width: 90%;
   z-index: 5;
 
 }
-.nav h2{
+
+.nav h2 {
   margin-left: 30px;
+}
+
+#author {
+  color: #d0abab;
+  font-weight: 1000;
+      margin-top: 3px;
+}
+#author1{
+  color: white;
+      margin-bottom: 5px;
+
 }
