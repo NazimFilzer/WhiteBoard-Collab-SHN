@@ -6,6 +6,9 @@
   font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
+  background: url(/src/img/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 body {
   margin: 0%;
@@ -17,31 +20,49 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  background: #1b1f244d;
+  padding: 10px;
+  border-radius: 20px;
 }
-
+.joinbox{
+    display: flex;
+      flex-direction: column;
+      text-align: center;
+        background: #1b1f24c5;
+        padding: 30px;
+}
+.joinbox h3{
+  color: #fff;
+}
+.twoboxes{
+  display: flex;
+    flex-direction: row;
+    text-align: center;
+}
 .joinChatContainer h3 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 .joinChatContainer input {
-  width: 210px;
-  height: 40px;
+  width: 290px;
+  height: 30px;
   margin: 7px;
-  border: 2px solid #43a047;
+  border: 2px solid #929292;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
+  background-color: #21212192;
 }
 
 .joinChatContainer button {
-  width: 225px;
-  height: 50px;
+  width: 305px;
+  height: 40px;
   margin: 7px;
   border: none;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
-  background: #43a047;
+  background: #152b7e;
   color: #fff;
   cursor: pointer;
 }
