@@ -36,8 +36,7 @@ function Chat({ socket, username, room }) {
   })
 
   return (
-    <div>
-      <Container />
+    <div className="main-page">
       <div className="chat-window">
         <div className="chat-header">
           <p>Live Chat</p>
@@ -79,6 +78,7 @@ function Chat({ socket, username, room }) {
           <button onClick={sendMessage}>&#9658;</button>
         </div>
       </div>
+      <Container />
     </div>
   );
 }
