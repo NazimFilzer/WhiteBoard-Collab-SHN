@@ -4,14 +4,11 @@
   background: #fff;
   color: #212121;
   font-family: "Open Sans", sans-serif;
-<<<<<<< HEAD
   display: grid;
   place-items: center;
   background: url(/src/img/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-=======
->>>>>>> 11f178e4e3ed7783b1c0d6e489944a5fbb81149f
 }
 body {
   margin: 0%;
