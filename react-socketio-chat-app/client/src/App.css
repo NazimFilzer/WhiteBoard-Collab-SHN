@@ -30,7 +30,7 @@ body {
       flex-direction: column;
       text-align: center;
         background: #1b1f24eb;
-        padding: 30px;
+        padding: 0px 30px 30px 30px;
         border-radius: 20px;
 }
 .joinbox h3{
@@ -51,8 +51,11 @@ body {
   
 }
 .joinChatContainer h3 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background-color: #12141887;
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px;
 }
 .joinChatContainer input {
   width: 290px;
@@ -84,9 +87,10 @@ body {
 }
 
 .chat-window {
-  width: 300px;
-  height: 420px;
-  background: #fff;
+    width: 300px;
+      height: 480px;
+      background: #263238;
+      border-radius: 9px;
 }
 
 .chat-window p {
@@ -108,9 +112,14 @@ body {
 }
 
 .chat-window .chat-body {
-  height: calc(450px - (45px + 70px));
+  height: calc(505px - (45px + 70px));
   border: 1px solid #263238;
   background: #fff;
+    place-items: center;
+      background: url(/src/img/chat.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      
 
   position: relative;
 }
@@ -131,19 +140,20 @@ body {
 }
 
 .chat-window .chat-body .message .message-content {
-  width: auto;
+width: auto;
   height: auto;
-  min-height: 40px;
-  max-width: 120px;
-  background-color: #43a047;
+  min-height: 35px;
+  max-width: 130px;
+  background-color: #b3b3b357;
   border-radius: 5px;
   color: white;
+  font-size: .9rem;
   display: flex;
   align-items: center;
   margin-right: 5px;
   margin-left: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 17px;
+  padding-left: 11px;
   overflow-wrap: break-word;
   word-break: break-word;
 }
@@ -159,6 +169,7 @@ body {
 #you .message-meta {
   justify-content: flex-start;
   margin-left: 5px;
+  color: #9a9a9a;
 }
 
 #other {
@@ -187,8 +198,9 @@ body {
 
 .chat-window .chat-footer {
   height: 40px;
-  border: 1px solid #263238;
-  border-top: none;
+background: #a6a6a600;
+  color: #fff;
+    border-top: none;
   display: flex;
 }
 
@@ -199,7 +211,8 @@ body {
   padding: 0 0.7em;
   font-size: 1em;
   border-right: 1px dotted #607d8b;
-
+      background: #fff0;
+color: #fff;
   outline: none;
   font-family: "Open Sans", sans-serif;
 }
@@ -224,13 +237,20 @@ body {
   opacity: 0 !important;
 }
 .main-page{
+width: 90%;
+  height: 76%;
+  background-color: #1b1f24;
   display: flex;
   flex-direction: row;
+  text-align: center;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 100%;
-  height: 100%;
-  background-color: #121418;
+  grid-gap: 30px;
+  gap: 30px;
+  margin-top: 82px;
+  padding: 20px;
+  border-radius: 30px;
+  position: fixed;
 }
 .nav{
   display: flex;
@@ -242,6 +262,7 @@ body {
   align-items: center;
   position: fixed;
   color: #fff;
+  z-index: 5;
 
 }
 .nav h2{
