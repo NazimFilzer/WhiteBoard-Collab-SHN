@@ -28,8 +28,9 @@ body {
     display: flex;
       flex-direction: column;
       text-align: center;
-        background: #1b1f24c5;
+        background: #1b1f24eb;
         padding: 30px;
+        border-radius: 20px;
 }
 .joinbox h3{
   color: #fff;
@@ -210,4 +211,25 @@ body {
 }
 .hide {
   opacity: 0 !important;
+}
+.main-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  top:0;
+  width: 100%;
+  height: 72px;
+  background: #121418;
+  align-items: center;
+  position: fixed;
+  color: #fff;
+
+}
+.nav h2{
+  margin-left: 30px;
 }
