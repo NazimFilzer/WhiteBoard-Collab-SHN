@@ -23,8 +23,14 @@ class Container extends React.Component
     changeSize(params) {
         this.setState({
             size: params.target.value
+        })}
+    changeTool(params){
+        this.setState({
+            size: params.target.value
+
         })
     }
+    
 
     render() {
 

@@ -73,11 +73,11 @@ class Board extends React.Component {
         ctx.strokeStyle = this.props.color;
 
         canvas.addEventListener('mousedown', function(e) {
-            canvas.addEventListener('mousemove', onPaint, false);
+            canvas.addEventListener('mousemove', drawLine, false);
         }, false);
 
         canvas.addEventListener('mouseup', function() {
-            canvas.removeEventListener('mousemove', onPaint, false);
+            canvas.removeEventListener('mousemove', drawLine, false);
         }, false);
 
         var root = this;
@@ -94,6 +94,12 @@ class Board extends React.Component {
                 root.socket.emit("canvas-data", base64ImageData);
             }, 1000)
         };
+        const drawLine = () => {
+   ctx.beginPath();
+   ctx.moveTo(mouse.x, mouse.y);
+   ctx.lineTo(last_mouse.x, last_mouse.y);
+   ctx.stroke();
+}
     }
 
     render() {
