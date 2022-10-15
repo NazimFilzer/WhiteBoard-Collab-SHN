@@ -20,7 +20,8 @@ z-index: 2 !important;
 
 .tools-section {
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
+    margin-top: 10px;
 }
 
 .board-container {
@@ -35,3 +36,15 @@ width: 100%;
     
 }
 
+#selectcolor{
+    border: 1px solid #298000;
+        border-radius: 15px;
+        background: #cdcdcd26;
+        width: 29px;
+}
+#selectsize{
+    border-radius: 12px;
+        padding: 2px 5px;
+        background: #263238;
+        color: #fff;
+}
