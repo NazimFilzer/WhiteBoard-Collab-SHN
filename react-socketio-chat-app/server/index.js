@@ -29,6 +29,10 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User Disconnected", socket.id);
   });
+   socket.on('canvas-data', (data) => {
+        socket.broadcast.emit('canvas-data', data);
+
+    });
 });
 
 server.listen(3001, () => {
