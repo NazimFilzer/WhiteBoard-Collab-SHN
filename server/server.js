@@ -32,14 +32,7 @@ io.on('connection', (socket) => {
 
 });
 
-app.post("/uploadfile", upload.single("file"), (req, res) => {
-    let fileType = req.file.mimetype.split('/')[1];
-    let newFileName = req.file.filename + "." + fileType;
 
-    fs.rename(`./uploads/${req.file.filename}`, `./uploads/${newFileName}`, () => {
-        res.send('Image Uploaded')
-    })
-})
 
 var server_port = 5000;
 http.listen(server_port, () => {
