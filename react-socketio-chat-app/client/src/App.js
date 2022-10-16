@@ -29,7 +29,7 @@ function App() {
       {!showChat ? (
         <div className="joinChatContainer">
           <div className="joinbox">
-          <h3>Join A Chat</h3>
+          <h3>Join A Room</h3>
           <input
             type="text"
             placeholder="John..."
