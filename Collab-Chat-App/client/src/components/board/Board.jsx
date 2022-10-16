@@ -60,9 +60,10 @@ class Board extends React.Component {
         canvas.addEventListener('mousemove', function(e) {
             last_mouse.x = mouse.x;
             last_mouse.y = mouse.y;
+            let rect = this.getBoundingClientRect();
 
-            mouse.x = e.pageX - this.offsetLeft;
-            mouse.y = e.pageY - this.offsetTop;
+            mouse.x = e.pageX - rect.left;
+            mouse.y = e.pageY - rect.top;
         }, false);
 
 
