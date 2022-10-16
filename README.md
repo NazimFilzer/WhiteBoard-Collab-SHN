@@ -1,4 +1,4 @@
-# Colabber 
+# Collabber 
 
 ## Live Demo
 
