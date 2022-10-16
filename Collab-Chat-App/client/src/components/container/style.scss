@@ -22,6 +22,10 @@ z-index: 2 !important;
     text-align: center;
     font-size: 12px;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
 }
 
 .board-container {
