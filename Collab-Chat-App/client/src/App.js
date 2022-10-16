@@ -44,8 +44,7 @@ function App() {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}>Enter Room</button>
-          <button onClick={joinRoom}>Create Room</button>
+         
           </div></div>
         
         
