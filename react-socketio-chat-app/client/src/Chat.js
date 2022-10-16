@@ -5,6 +5,7 @@ import Container from "./components/container/Container";
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+ 
 
   const sendMessage = async () => {
 
@@ -28,6 +29,7 @@ function Chat({ socket, username, room }) {
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
+      
     });
   }, [socket]);
 
@@ -39,7 +41,7 @@ function Chat({ socket, username, room }) {
     <div className="main-page">
       <div className="chat-window">
         <div className="chat-header">
-          <p>Live Chat</p>
+          <p> Room : <span>{room}</span></p>
         </div>
         <div className="chat-body">
           <ScrollToBottom className="message-container">
@@ -50,7 +52,6 @@ function Chat({ socket, username, room }) {
                   id={username === messageContent.author ? "you" : "other"}
                 >
                   <div>
-                   
                     <div className="message-content">
                       <p id="author">{messageContent.author}</p>
                       <p id="author1">{messageContent.message}</p>

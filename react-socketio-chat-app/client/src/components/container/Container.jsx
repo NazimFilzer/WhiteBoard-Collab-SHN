@@ -27,7 +27,13 @@ class Container extends React.Component
         this.setState({
             size: params.target.value
 
-        })
+        })}
+        changeTools(params){
+            this.setState({
+                color: "#aaafb6",
+                size:"20"
+
+            })
     }
     
 
@@ -39,6 +45,10 @@ class Container extends React.Component
                     <div className="color-picker-container">
                          Brush Color : &nbsp; 
                         <input id="selectcolor" type="color" value={this.state.color} onChange={this.changeColor.bind(this)}/>
+                    </div>
+                    <div className="color-picker-container">
+                        eraser : &nbsp;
+                        <button  onClick={this.changeTools.bind(this)}></button>
                     </div>
 
                     <div className="brushsize-container">
