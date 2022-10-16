@@ -9,7 +9,8 @@ class Container extends React.Component
 
         this.state = {
             color: "#000000",
-            size: "5"
+            size: "5",
+            imgFile : ''
         }
     }
 
@@ -35,6 +36,15 @@ class Container extends React.Component
 
             })
     }
+
+    imgFileHandler(params){
+        if (1) {
+            this.setState({
+                imgFile : URL.createObjectURL(params.target.files[0])
+            })
+        }
+    }
+    
     
 
     render() {
@@ -63,11 +73,15 @@ class Container extends React.Component
                         </select>
                     </div>
 
+                    <div>
+                        <input type="file" id="upload" accept = "image/*" onChange = {this.imgFileHandler.bind(this)}/>
+                    </div>
+
                 </div>
 
                 <div class="board-container">
                        
-                    <Board color={this.state.color} size={this.state.size}>
+                    <Board color={this.state.color} size={this.state.size} img = {this.state.imgFile}>
               </Board>
               
                 </div>

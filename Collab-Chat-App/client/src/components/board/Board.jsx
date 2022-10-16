@@ -47,6 +47,11 @@ class Board extends React.Component {
         var canvas = document.querySelector('#board');
         this.ctx = canvas.getContext('2d');
         var ctx = this.ctx;
+        const image = document.getElementById("source");
+
+        image.addEventListener("load", (e) => {
+        ctx.drawImage(image, 0,0,canvas.width, canvas.height);
+        });
 
         var sketch = document.querySelector('#sketch');
         var sketch_style = getComputedStyle(sketch);
@@ -101,8 +106,8 @@ class Board extends React.Component {
     render() {
         return (
             <div class="sketch" id="sketch">
-                <canvas className="board" id="board">
-                     
+                <canvas className="board" id="board" style={{backgroundColor: 'transparent'}}>
+                     <img src ={this.props.img} alt = "" id = "source"/>
                 </canvas>
             </div>
         )
