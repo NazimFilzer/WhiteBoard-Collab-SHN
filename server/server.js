@@ -19,6 +19,28 @@ var io = require('socket.io')(http, {
     allowEIO3: true // false by default
 });
 
+io.on('connection', (socket) => {
+    console.log('User Online');
+
+    socket.on('canvas-data', (data) => {
+        socket.broadcast.emit('canvas-data', data);
+
+    });
+    socket.on("chat", (payload) => {
+        io.emit("chat", payload);
+    });
+
+});
+app.post("/uploadfile", upload.single("file"), (req, res) => {
+    let fileType = req.file.mimetype.split('/')[1];
+    let newFileName = req.file.filename + "." + fileType;
+
+    fs.rename(`./uploads/${req.file.filename}`, `./uploads/${newFileName}`, () => {
+        res.send('Image Uploaded')
+    })
+})
+
+
 var server_port = 5000;
 http.listen(server_port, () => {
     console.log("Started on : " + server_port);
