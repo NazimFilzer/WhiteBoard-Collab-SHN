@@ -11,7 +11,7 @@ Link : To be updated Soon
 1. [Jozef Antony Neelamkavil ](https://github.com/jzf21/)
 
 ## Project Description
-A Collabration Web-App using Express, React and Socket.io where Mutiple People can Join a Private room and Chat, Add Images and Draw Among themselves
+A Collabration Web-App using Express, React and Socket.io where Multiple People can Join a Private room and Chat, Add Images and Draw Among themselves
 
 ## 🔧 Project Demo:
 
@@ -20,6 +20,7 @@ https://user-images.githubusercontent.com/98267566/196034231-2f68e727-8eac-4710-
 # Steps To Run the Project:
 
 1.Downloading the Modules
+!important node version <17.0.0
 ```bash
 git clone https://github.com/NazimFilzer/WhiteBoard-Collab-SHN.git
 cd Collab-Chat-App
