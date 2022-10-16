@@ -9,7 +9,7 @@ class Container extends React.Component
 
         this.state = {
             color: "#000000",
-            size: "5",
+            size: "1",
             imgFile : ''
         }
     }
@@ -64,12 +64,12 @@ class Container extends React.Component
                     <div className="brushsize-container">
                          Brush Size : &nbsp; 
                         <select id="selectsize" value={this.state.size} onChange={this.changeSize.bind(this)}>
+                            <option> 1 </option>
+                            <option> 2 </option>
                             <option> 5 </option>
                             <option> 10 </option>
                             <option> 15 </option>
                             <option> 20 </option>
-                            <option> 25 </option>
-                            <option> 30 </option>
                         </select>
                     </div>
 
