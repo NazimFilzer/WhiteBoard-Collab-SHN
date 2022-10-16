@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <div className="nav">
-        <h2>COLLAB TRADE</h2>
+        <h2>COLLABBER</h2>
         
 </div>
       <div className="boxes">
