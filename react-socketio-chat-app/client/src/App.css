@@ -150,12 +150,11 @@ body {
 }
 
 .chat-window .chat-body .message .message-content {
-width: auto;
+  width: auto;
   height: auto;
   min-height: 35px;
   min-width: 50px;
   background-color: #b3b3b357;
-  border-radius: 10px 9px 21px 0px;
   color: white;
   font-size: .9rem;
   display: flex;
@@ -166,18 +165,22 @@ width: auto;
   overflow-wrap: break-word;
   word-break: break-word;
 }
-.message-content{
+
+.message-content {
   padding-bottom: 2px;
   display: flex;
   flex-direction: column;
   gap: 3px;
   text-align: left;
 }
+
 #you {
   justify-content: flex-start;
 }
 
-
+#you .message-content {
+  border-radius: 10px 9px 21px 0px;
+}
 
 #you .message-meta {
   justify-content: flex-start;
@@ -191,7 +194,9 @@ width: auto;
 
 #other .message-content {
   justify-content: flex-end;
-  background-color: cornflowerblue;
+  margin-left: 5px;
+  color: #9a9a9a;
+  border-radius: 10px 9px 0px 20px;
 }
 
 #other .message-meta {
@@ -293,10 +298,11 @@ width: auto;
 #author {
   color: #d0abab;
   font-weight: 1000;
-      margin-top: 3px;
+  margin-top: 3px;
 }
-#author1{
+
+#author1 {
   color: white;
-      margin-bottom: 5px;
+  margin-bottom: 5px;
 
 }
