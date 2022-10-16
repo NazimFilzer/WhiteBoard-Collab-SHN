@@ -1,4 +1,4 @@
-# Collabber 
+# **<div align="center">Collabber</div>**  
 
 ## Live Demo
 
