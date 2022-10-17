@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-Link : To be updated Soon
+Link : https://collaber.netlify.app/
 
 ## Team Members
 
