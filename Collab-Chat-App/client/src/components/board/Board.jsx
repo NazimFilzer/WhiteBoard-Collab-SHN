@@ -6,7 +6,7 @@ import './style.scss';
 class Board extends React.Component {
 
     timeout;
-    socket = io.connect("http://localhost:3001");
+    socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
 
     ctx;
     isDrawing = false;

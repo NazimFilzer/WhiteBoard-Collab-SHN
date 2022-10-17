@@ -4,7 +4,7 @@ import { useState } from "react";
 import Chat from "./Chat";
 
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <div className="nav">
-        <h2>COLLABBER</h2>
+        <h2>COLLABER</h2>
         
 </div>
       <div className="boxes">

@@ -5,9 +5,16 @@ import Container from "./components/container/Container";
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+  const [user,setUser]=useState(username);
+
  
 
   const sendMessage = async () => {
+    if(user!==""){
+      await socket.emit("send_message",user);
+      setUser("")
+
+    }
 
     if (currentMessage !== "") {
       const messageData = {
