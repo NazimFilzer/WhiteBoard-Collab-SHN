@@ -20,7 +20,10 @@ https://user-images.githubusercontent.com/98267566/196034231-2f68e727-8eac-4710-
 # Steps To Run the Project:
 
 1.Downloading the Modules
-!important node version <17.0.0
+```diff
+- node version used is >17.0.0 (If ur Node version is Greater than 17, eg v18 then the app wont run)
+```
+
 ```bash
 git clone https://github.com/NazimFilzer/WhiteBoard-Collab-SHN.git
 cd Collab-Chat-App
