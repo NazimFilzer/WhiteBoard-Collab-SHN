@@ -11,8 +11,8 @@ function Chat({ socket, username, room }) {
 
   const sendMessage = async () => {
     if(user!==""){
-      await socket.emit("send_message",user);
-      setUser("")
+      await socket.emit("join_room",user);
+  
 
     }
 

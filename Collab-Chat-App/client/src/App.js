@@ -4,7 +4,7 @@ import { useState } from "react";
 import Chat from "./Chat";
 
 
-const socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
+const socket = io.connect("http://localhost:3001");
 
 function App() {
 

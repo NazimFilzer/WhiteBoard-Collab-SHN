@@ -51,6 +51,8 @@ class Board extends React.Component {
 
         image.addEventListener("load", (e) => {
         ctx.drawImage(image, 0,0,canvas.width, canvas.height);
+         var base64ImageData = canvas.toDataURL("image/png");
+                root.socket.emit("canvas-data", base64ImageData);
         });
 
         var sketch = document.querySelector('#sketch');
@@ -98,7 +100,7 @@ class Board extends React.Component {
             root.timeout = setTimeout(function(){
                 var base64ImageData = canvas.toDataURL("image/png");
                 root.socket.emit("canvas-data", base64ImageData);
-            }, 1000)
+            }, 1)
         };
 
     }
