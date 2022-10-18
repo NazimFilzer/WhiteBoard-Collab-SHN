@@ -20,8 +20,20 @@ io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
   socket.on("join_room", (data) => {
-    socket.join(data);
-    console.log(`User with ID: ${socket.id} joined room: ${data}`);
+    socket.join(data.room);
+    console.log(`User with ID: ${socket.id} and username: ${data.username} joined room: ${data.room}`);
+    socket.data.username = data.username;
+    socket.data.room = data.room;
+    const messageData = {
+      room: data.room,
+      author: 'Server',
+      message: `User ${data.username} has joined the room.`,
+      time:
+        new Date(Date.now()).getHours() +
+        ":" +
+        new Date(Date.now()).getMinutes(),
+    };
+    socket.to(data.room).emit("receive_message", messageData);
     socket.to(data.room).emit("back", "Hello")
   });
 
@@ -31,6 +43,16 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log("User Disconnected", socket.id);
+    const messageData = {
+      room: socket.data.room,
+      author: 'Server',
+      message: `User ${socket.data.username} has disconnected from the room.`,
+      time:
+        new Date(Date.now()).getHours() +
+        ":" +
+        new Date(Date.now()).getMinutes(),
+    };
+    socket.to(socket.data.room).emit("receive_message", messageData);
   });
   
   socket.on('canvas-data', (data) => {
