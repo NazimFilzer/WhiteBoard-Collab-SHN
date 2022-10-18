@@ -77,4 +77,4 @@ npm start
 
 # Dependencies
 
-Node v16.*.
+Node v16.*
