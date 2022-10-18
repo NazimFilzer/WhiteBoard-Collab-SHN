@@ -25,7 +25,6 @@ A Collabration Web-App using Express, React and Socket.io where Multiple People 
 It uses...
 
 ## Key Features 
-- [x] 
 - [x] **Fully Opensource**
 - [x] **Easy setup**
 	 - With an easy 3 steps guided setup process, setup is easier than you can imagine.
