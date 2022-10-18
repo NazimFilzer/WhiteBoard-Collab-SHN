@@ -6,12 +6,15 @@ function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [user,setUser]=useState(username);
+  const[usercheck,setUsercheck]=useState(username);
 
  
 
   const sendMessage = async () => {
-    if(user!==""){
-      await socket.emit("join_room",user);
+    if(usercheck!==""){
+      await socket.emit("join_room",username);
+      setUsercheck("")
+      
   
 
     }
