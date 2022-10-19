@@ -13,16 +13,22 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-
-
+let connections = new Set();
+let roomsData = {}
 io.on("connection", (socket) => {
+  //maintaing unique connection to the server
+  connections.add(socket);
+  // console.log(`User Connected: ${socket.id}`);
 
-  console.log(`User Connected: ${socket.id}`);
-
-  socket.on("join_room", (data) => {
-    socket.join(data);
+  socket.on("join_room", async(data) => {
+    
     console.log(`User with ID: ${socket.id} joined room: ${data}`);
-    socket.join(data.room);
+    let roomId = data.room
+    socket.join(roomId);
+    
+    await handleRoomJoin(socket, roomId);
+    io.to(roomId).emit('members', roomsData[roomId])
+    
     console.log(`User with ID: ${socket.id} and username: ${data.username} joined room: ${data.room}`);
     socket.data.username = data.username;
     socket.data.room = data.room;
@@ -42,8 +48,9 @@ io.on("connection", (socket) => {
     socket.to(data.room).emit("receive_message", data);
   });
 
-  socket.on("disconnect", () => {
+  socket.on("disconnect", async() => {
     console.log("User Disconnected", socket.id);
+    await handleRoomLeave(socket);
     const messageData = {
       room: socket.data.room,
       author: 'Bot',
@@ -65,3 +72,34 @@ io.on("connection", (socket) => {
 server.listen(3001, () => {
   console.log("SERVER RUNNING");
 });
+
+const handleRoomJoin = async(socket, roomId) => {
+  let roomIdExists = roomsData[roomId] !== undefined;
+  if(roomIdExists){
+    let targetRoomData = roomsData[roomId];
+    targetRoomData['count'] += 1;
+    targetRoomData['members'].add(socket);
+    roomsData[roomId] = targetRoomData;
+  }else{
+    let members = new Set();
+    members.add(socket);
+    let tempData = {'count':1, 'members': members};
+    roomsData[roomId] = tempData;
+  }
+}
+
+const handleRoomLeave = async(socket) => {
+  //delete from connection set
+  connections.delete(socket);
+  //update roomData;
+  for(let key in roomsData){
+    let currRoomData = roomsData[key];
+    if(currRoomData['members'].has(socket)){
+      currRoomData['members'].delete(socket);
+      currRoomData['count'] -= 1;
+      roomsData[key] = currRoomData;
+      io.to(key).emit('members', currRoomData)
+    }
+  }
+
+}
