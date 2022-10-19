@@ -13,7 +13,7 @@ A Collabration Web-App using Express, React and Socket.io where Multiple People 
 
 
 ## What is Collaber?
-[Collaber](https://collaber.netlify.app/) is a Collabration Web-App using Express, React and Socket.io where Multiple People can Join a Private room and Chat, Add Images and Draw Among themselves. Users can create group rooms on the go or jump into created rooms and get started instantly. Collaber offers the import of external files for your convenience. It has it's own built-in group chat for all your communication needs! It offers brush colours of all kinds, an eraser and multiple brush sizes to make your drawing or plan expressive as required. The learning curve is absolutely minimal. 
+[Collaber](https://collaber.netlify.app/) is a Collabration Web-App using Express, React and Socket.io where Multiple People can Join a Private room and Chat, Add Images and Draw Among themselves. Users can create Rooms on the go or jump into created rooms and get started instantly. Collaber offers the import of external files for your convenience. It has it's own built-in group chat for all your communication needs! It offers brush colours of all kinds, an eraser and multiple brush sizes to make your drawing or plan as expressive as required. The learning curve is absolutely minimal. 
 
 # Team Members
 
