@@ -6,7 +6,6 @@ import './style.scss';
 class Board extends React.Component {
 
     timeout;
-    socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
 
     ctx;
     isDrawing = false;
@@ -14,7 +13,7 @@ class Board extends React.Component {
     constructor(props) {
         super(props);
 
-        this.socket.on("canvas-data", function(data){
+        this.props.socket.on("receive_canvas_data", function(data){
 
             var root = this;
             var interval = setInterval(function(){
@@ -52,7 +51,11 @@ class Board extends React.Component {
         image.addEventListener("load", (e) => {
         ctx.drawImage(image, 0,0,canvas.width, canvas.height);
          var base64ImageData = canvas.toDataURL("image/png");
-                root.socket.emit("canvas-data", base64ImageData);
+         const canvasData = {
+            room: root.props.room,
+            canvas: base64ImageData
+         }
+         root.props.socket.emit("send_canvas_data", canvasData);
         });
 
         var sketch = document.querySelector('#sketch');
@@ -99,7 +102,11 @@ class Board extends React.Component {
             if(root.timeout !== undefined) clearTimeout(root.timeout);
             root.timeout = setTimeout(function(){
                 var base64ImageData = canvas.toDataURL("image/png");
-                root.socket.emit("canvas-data", base64ImageData);
+                const canvasData = {
+                    room: root.props.room,
+                    canvas: base64ImageData
+                 }
+                root.props.socket.emit("send_canvas_data", canvasData);
             }, 1)
         };
 

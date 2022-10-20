@@ -65,9 +65,9 @@ io.on("connection", (socket) => {
     };
     socket.to(socket.data.room).emit("receive_message", messageData);
   });
-
-  socket.on('canvas-data', (data) => {
-    socket.broadcast.emit('canvas-data', data);
+  
+  socket.on('send_canvas_data', (data) => {
+    socket.to(data.room).emit('receive_canvas_data', data.canvas);
 
   });
 });

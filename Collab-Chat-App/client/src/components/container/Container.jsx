@@ -81,8 +81,13 @@ class Container extends React.Component
 
                 <div class="board-container">
                        
-                    <Board color={this.state.color} size={this.state.size} img = {this.state.imgFile}>
-              </Board>
+                <Board 
+                    socket={this.props.socket} 
+                    room={this.props.room} 
+                    color={this.state.color} 
+                    size={this.state.size} 
+                    img={this.state.imgFile}>
+                </Board>
               
                 </div>
             </div>
