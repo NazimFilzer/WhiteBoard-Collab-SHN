@@ -13,12 +13,15 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-let connections = new Set();
-let roomsData = {}
+
+let connections = new Set(); //tracks all unique connections to server
+let roomsData = {} //tracks all room data
+//example : roomsData = {'12345' : {'count' : 5, 'members' : set of users}}
+
 io.on("connection", (socket) => {
-  //maintaing unique connection to the server
+  //adding this new connection to connections set
   connections.add(socket);
-  // console.log(`User Connected: ${socket.id}`);
+  console.log(`User Connected: ${socket.id}`);
 
   socket.on("join_room", async(data) => {
     
@@ -73,6 +76,11 @@ server.listen(3001, () => {
   console.log("SERVER RUNNING");
 });
 
+/**
+ * add user to room with given id and maintains count of users in that room
+ * @param {*} socket instance of socket,
+ * @param {*} roomId id of the room
+ */
 const handleRoomJoin = async(socket, roomId) => {
   let roomIdExists = roomsData[roomId] !== undefined;
   if(roomIdExists){
@@ -88,6 +96,11 @@ const handleRoomJoin = async(socket, roomId) => {
   }
 }
 
+
+/**
+ * when a user disconnects, delete that user from all rooms in which he was joined earlier
+ * @param {*} socket instance of socket,
+ */
 const handleRoomLeave = async(socket) => {
   //delete from connection set
   connections.delete(socket);

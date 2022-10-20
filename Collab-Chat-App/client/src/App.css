@@ -114,7 +114,6 @@ body {
 .chat-header{
   display: flex;
   justify-content: flex-start;
-  /* gap:2vw; */
 }
 .chat-window .chat-header p {
   display: block;
