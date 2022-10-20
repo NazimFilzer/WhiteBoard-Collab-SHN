@@ -2,6 +2,7 @@ import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
+import {nanoid} from "nanoid";
 
 
 const socket = io.connect("http://localhost:3001");
@@ -19,9 +20,18 @@ function App() {
       setShowChat(true);
     }
   };
+  
+  const createid =()=>
+  {
+    const uniqueId=nanoid();
+    setRoom(uniqueId);
+    
+  }
+
 
   return (
     <div className="App">
+    
       <div className="nav">
         <h2>COLLABER</h2>
 
@@ -38,16 +48,17 @@ function App() {
                   setUsername(event.target.value);
                 }}
               />
-              <input
-                type="text"
-                placeholder="Room ID..."
-                onChange={(event) => {
-                  setRoom(event.target.value);
-                }}
-              />
+             
 
               <button onClick={joinRoom}>Enter Room</button>
               <button onClick={joinRoom}>Create Room</button>
+              <button onClick={createid}>Create Room Id</button>
+{room}
+
+
+
+
+
             </div></div>
 
 
