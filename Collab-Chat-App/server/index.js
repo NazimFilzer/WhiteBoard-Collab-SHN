@@ -18,6 +18,8 @@ let connections = new Set(); //tracks all unique connections to server
 let roomsData = {} //tracks all room data
 //example : roomsData = {'12345' : {'count' : 5, 'members' : set of users}}
 
+let mostRecentCanvasData;
+
 io.on("connection", (socket) => {
   //adding this new connection to connections set
   connections.add(socket);
@@ -32,6 +34,9 @@ io.on("connection", (socket) => {
     await handleRoomJoin(socket, roomId);
     io.to(roomId).emit('members', roomsData[roomId])
     
+    if(mostRecentCanvasData){
+      io.to(roomId).emit('receive_canvas_data', mostRecentCanvasData)
+    }
     console.log(`User with ID: ${socket.id} and username: ${data.username} joined room: ${data.room}`);
     socket.data.username = data.username;
     socket.data.room = data.room;
@@ -67,6 +72,7 @@ io.on("connection", (socket) => {
   });
   
   socket.on('send_canvas_data', (data) => {
+    mostRecentCanvasData = data.canvas;
     socket.to(data.room).emit('receive_canvas_data', data.canvas);
 
   });
