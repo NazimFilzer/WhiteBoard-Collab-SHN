@@ -111,6 +111,10 @@ body {
   cursor: pointer;
 }
 
+.chat-header{
+  display: flex;
+  justify-content: flex-start;
+}
 .chat-window .chat-header p {
   display: block;
   padding: 0 1em 0 2em;

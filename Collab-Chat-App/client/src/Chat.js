@@ -6,6 +6,7 @@ function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [user,setUser]=useState(username);
+  const [onlineCount, setOnlineCount] = useState(1);
 
  
 
@@ -30,7 +31,6 @@ function Chat({ socket, username, room }) {
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
-      
     });
   }, [socket]);
 
@@ -38,11 +38,17 @@ function Chat({ socket, username, room }) {
     console.log(data)
   })
 
+  socket.on('members', data => {
+    let onlinePlayers = data.count;
+    setOnlineCount(onlinePlayers);
+  })
+
   return (
     <div className="main-page">
       <div className="chat-window">
         <div className="chat-header">
-          <p> Room : <span>{room}</span></p>
+          <p> Room :{room}</p>
+          <p> Online :{onlineCount ?? 5}</p>
         </div>
         <div className="chat-body">
           <ScrollToBottom className="message-container">
