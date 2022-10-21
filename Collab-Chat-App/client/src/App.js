@@ -43,6 +43,7 @@ function App() {
         {!showChat ? (
           <div className="joinChatContainer">
             <div className="joinbox">
+              <div className="box1">
               <h3>Create a Room</h3>
               <input
                 type="text"
@@ -59,8 +60,11 @@ function App() {
              <div className="roomcode">
               <p className="room-id">{room}</p>
               <button onClick={createid} >Generate</button>
+                </div>
               </div>
-              <h2>Join A Room</h2>
+              <div className="box2">
+
+              <h3>Join A Room</h3>
 
                <input
                 type="text"
@@ -77,7 +81,8 @@ function App() {
                   setRoom(event.target.value);
                 }}
               />
-               <button onClick={joinRoom}>Enter Room</button>
+                <button onClick={joinRoom}>Enter Room</button>
+                </div>
 
 
 
