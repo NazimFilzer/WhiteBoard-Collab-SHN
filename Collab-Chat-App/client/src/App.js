@@ -8,9 +8,9 @@ import {nanoid} from "nanoid";
 const socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
 
 function App() {
-
+   const uniqueId=nanoid(4);
   const [username, setUsername] = useState("");
-  const [room, setRoom] = useState("");
+  const [room, setRoom] = useState(uniqueId);
   const [showChat, setShowChat] = useState(false);
   const [roomBool, setRoomBool] = useState(true);
 
@@ -25,7 +25,7 @@ function App() {
   
   const createid =()=>
   {
-    const uniqueId=nanoid(4);
+    const uniqueId=nanoid(8);
     setRoom(uniqueId);
     setRoomBool(false);
     
@@ -53,11 +53,22 @@ function App() {
               />
              
 
-              <button onClick={joinRoom} disabled={roomBool}>Enter Room</button>
+              <button onClick={joinRoom} >Create Room</button>
              
-              <button onClick={createid} disabled={!roomBool}>Create Room Id</button>
-              <p>{room}</p>
+              
+             <div className="roomcode">
+              <p className="room-id">{room}</p>
+              <button onClick={createid} >Generate</button>
+              </div>
               <h2>Join A Room</h2>
+
+               <input
+                type="text"
+                placeholder="John..."
+                onChange={(event) => {
+                  setUsername(event.target.value);
+                }}
+              />
               
                <input
                 type="text"

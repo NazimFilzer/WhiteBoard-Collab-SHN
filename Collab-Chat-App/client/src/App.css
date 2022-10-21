@@ -350,3 +350,26 @@ h2,p{
   color: #f6f6f6;
 
 }
+
+.roomcode{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.roomcode button{
+  width: 80px;
+  background-color: black;
+  color:#c7c7c7;
+  height: 40px;
+}
+.room-id{
+  background-color: white;
+  color: black;
+  padding: 8px 5px;
+  width: 100%;
+  
+  border-radius: 5px;
+  font-weight: 500;
+}
