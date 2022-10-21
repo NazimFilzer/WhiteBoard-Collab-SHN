@@ -99,7 +99,18 @@ body {
   color: #fff;
   cursor: pointer;
 }
-
+.roomcode p{
+  width: 203px;
+    height: 24px;
+    margin: 7px;
+    border-radius: 5px;
+    padding: 10px 8px 5px 8px;
+    font-size: 16px;
+    background: #152b7e1c;
+    color: #fff;
+    border: 1px solid #ffffff52;
+    cursor: pointer;
+}
 .joinChatContainer button:hover {
   background: #2e7d32;
 }
@@ -372,9 +383,9 @@ h2,p{
 }
 
 .roomcode button{
-  width: 80px;
-  background-color: black;
-  color:#c7c7c7;
+width: 85px;
+  background-color: #2e7d32;
+  color: #c7c7c7;
   height: 40px;
 }
 .room-id{
