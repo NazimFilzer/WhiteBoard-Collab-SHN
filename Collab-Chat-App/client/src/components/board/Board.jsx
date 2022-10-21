@@ -91,6 +91,29 @@ class Board extends React.Component {
             canvas.removeEventListener('mousemove', onPaint, false);
         }, false);
 
+        canvas.addEventListener('touchstart', function(e){
+            canvas.addEventListener('touchmove',handleTouchDraw, 'false');
+        }, false)
+
+        canvas.addEventListener('touchend', function(e){
+            canvas.removeEventListener('touchmove',handleTouchDraw, 'false');
+        }, false)
+
+        canvas.addEventListener('touchmove', 
+        function(e){
+            handleTouchDraw(e);
+        }, false)
+        const handleTouchDraw = async function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            let touch = e.touches[0];
+            let mouseEvent = new MouseEvent("mousemove", {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            await canvas.dispatchEvent(mouseEvent);
+            onPaint();
+        }
         var root = this;
         var onPaint = function() {
             ctx.beginPath();
