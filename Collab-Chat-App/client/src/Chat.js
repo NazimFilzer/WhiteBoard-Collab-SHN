@@ -47,7 +47,7 @@ function Chat({ socket, username, room }) {
     <div className="main-page">
       <div className="chat-window">
         <div className="chat-header">
-          <p> Room : <span id="green">{room}</span></p>
+          <p> Room : {room}</p>
           <p> Online : <span id="green">{onlineCount ?? 5}</span></p>
         </div>
         <div className="chat-body">
