@@ -166,7 +166,9 @@ font-size: 2rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
+#green{
+  color: #70e460;
+}
 .chat-window .chat-body .message-container::-webkit-scrollbar {
   display: none;
 }
