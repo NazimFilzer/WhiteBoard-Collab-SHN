@@ -4,7 +4,8 @@ import { useState } from "react";
 import Chat from "./Chat";
 import { nanoid } from "nanoid";
 
-const socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
+// const socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
+const socket = io.connect("http://localhost:3001/");
 
 function App() {
   const uniqueId = nanoid(4);
