@@ -18,7 +18,8 @@ let connections = new Set(); //tracks all unique connections to server
 let roomsData = {}; //tracks all room data
 //example : roomsData = {'12345' : {'count' : 5, 'members' : set of users}}
 
-let mostRecentCanvasData;
+let mostRecentCanvasData = {} //tracks all room most recent canvas Data
+//example : mostRecentCanvasData = {'12345' : canvasData}
 
 io.on("connection", (socket) => {
   //adding this new connection to connections set
@@ -33,8 +34,8 @@ io.on("connection", (socket) => {
     await handleRoomJoin(socket, roomId);
     io.to(roomId).emit("members", roomsData[roomId]);
 
-    if (mostRecentCanvasData) {
-      io.to(roomId).emit("receive_canvas_data", mostRecentCanvasData);
+    if(mostRecentCanvasData[roomId]) {
+      io.to(roomId).emit("receive_canvas_data", mostRecentCanvasData[roomId]);
     }
     console.log(
       `User with ID: ${socket.id} and username: ${data.username} joined room: ${data.room}`
@@ -73,7 +74,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("send_canvas_data", (data) => {
-    mostRecentCanvasData = data.canvas;
+    updateMostRecentCanvasData(data.room, data.canvas);
     socket.to(data.room).emit("receive_canvas_data", data.canvas);
   });
 });
@@ -116,6 +117,14 @@ const handleRoomLeave = async (socket) => {
     }
   }
 };
+
+const updateMostRecentCanvasData = (roomId, data) => {
+  mostRecentCanvasData[roomId] = data;
+}
+
+const getCanvasData = (roomId) => {
+  return mostRecentCanvasData[roomId];
+}
 
 app.get("/", (req, res) => {
   res.send("testing");
