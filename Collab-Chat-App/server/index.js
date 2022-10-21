@@ -9,7 +9,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://collaber.netlify.app"],
     methods: ["GET", "POST"],
   },
 });
@@ -72,9 +72,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
-  console.log("SERVER RUNNING");
-});
 
 /**
  * add user to room with given id and maintains count of users in that room
@@ -116,3 +113,12 @@ const handleRoomLeave = async(socket) => {
   }
 
 }
+
+
+app.get('/', (req, res) => {
+  res.send('testing')
+})
+
+server.listen(process.env.PORT || 3001, () => {
+  console.log("SERVER RUNNING");
+});

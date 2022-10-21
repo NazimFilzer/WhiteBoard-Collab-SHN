@@ -5,7 +5,7 @@ import Container from "./components/container/Container";
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
-  const [user,setUser]=useState(username);
+    const [user,setUser]=useState(username);
   const [onlineCount, setOnlineCount] = useState(1);
 
  
