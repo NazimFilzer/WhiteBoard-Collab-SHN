@@ -407,6 +407,9 @@ width: 85px;
     margin-top: 260px;
     position: relative;
   }
+  .nav{
+    position: relative;
+  }
   .joinbox{
     flex-direction: column;
     padding: 0px;
@@ -421,6 +424,6 @@ width: 85px;
       display: flex;
 padding: 0px;
       border-radius: 20px;
-      margin-top: 111px;
+      margin-top: 30px;
     }
 }
