@@ -5,10 +5,8 @@ import Container from "./components/container/Container";
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
-    const [user,setUser]=useState(username);
+  const [user, setUser] = useState(username);
   const [onlineCount, setOnlineCount] = useState(1);
-
- 
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -34,21 +32,24 @@ function Chat({ socket, username, room }) {
     });
   }, [socket]);
 
-  socket.on('back', data => {
-    console.log(data)
-  })
+  socket.on("back", (data) => {
+    console.log(data);
+  });
 
-  socket.on('members', data => {
+  socket.on("members", (data) => {
     let onlinePlayers = data.count;
     setOnlineCount(onlinePlayers);
-  })
+  });
 
   return (
     <div className="main-page">
       <div className="chat-window">
         <div className="chat-header">
           <p> Room : {room}</p>
-          <p> Online : <span id="green">{onlineCount ?? 5}</span></p>
+          <p>
+            {" "}
+            Online : <span id="green">{onlineCount ?? 5}</span>
+          </p>
         </div>
         <div className="chat-body">
           <ScrollToBottom className="message-container">
@@ -65,7 +66,6 @@ function Chat({ socket, username, room }) {
                     </div>
                     <div className="message-meta">
                       <p id="time">{messageContent.time}</p>
-                      
                     </div>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ function Chat({ socket, username, room }) {
           <button onClick={sendMessage}>&#9658;</button>
         </div>
       </div>
-      <Container socket={socket} room={room}/>
+      <Container socket={socket} room={room} />
     </div>
   );
 }

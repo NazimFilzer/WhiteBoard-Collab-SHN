@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Editor = () => {
-  return (
-    <div>Editor</div>
-  )
-}
+  return <div>Editor</div>;
+};

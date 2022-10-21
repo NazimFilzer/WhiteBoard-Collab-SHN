@@ -1,54 +1,51 @@
 .container {
-z-index: 2 !important;
-    width: 90%;
-    height: 99%;
-    background: linear-gradient(45deg, #263238, #263238);
-    border-radius: 9px;
+  z-index: 2 !important;
+  width: 90%;
+  height: 99%;
+  background: linear-gradient(45deg, #263238, #263238);
+  border-radius: 9px;
 }
 
 .color-picker-container {
-    text-align: center;
-    display: inline;
-    color: white;
+  text-align: center;
+  display: inline;
+  color: white;
 }
 
 .brushsize-container {
-    display: inline;
-    color: white;
-    margin-left: 12px;
+  display: inline;
+  color: white;
+  margin-left: 12px;
 }
 
 .tools-section {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-    align-items: center;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
 }
 
 .board-container {
-width: 100%;
-    height: 90%;
-    margin: auto;
-    margin-top: 2%;
-    background: rgb(247 248 255 / 63%);
-    z-index: 2 !important;
-   
-  
-    
+  width: 100%;
+  height: 90%;
+  margin: auto;
+  margin-top: 2%;
+  background: rgb(247 248 255 / 63%);
+  z-index: 2 !important;
 }
 
-#selectcolor{
-    border: 1px solid #298000;
-        border-radius: 15px;
-        background: #cdcdcd26;
-        width: 29px;
+#selectcolor {
+  border: 1px solid #298000;
+  border-radius: 15px;
+  background: #cdcdcd26;
+  width: 29px;
 }
-#selectsize{
-    border-radius: 12px;
-        padding: 2px 5px;
-        background: #263238;
-        color: #fff;
+#selectsize {
+  border-radius: 12px;
+  padding: 2px 5px;
+  background: #263238;
+  color: #fff;
 }

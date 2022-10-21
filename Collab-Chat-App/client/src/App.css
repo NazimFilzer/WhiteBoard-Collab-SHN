@@ -34,25 +34,25 @@ body {
   text-align: center;
   padding: 0px 30px 30px 30px;
   border-radius: 20px;
-    gap: 30px;
+  gap: 30px;
 }
 
 .joinbox h3 {
   color: #fff;
 }
-.box1{
+.box1 {
   display: flex;
   flex-direction: column;
-    background: #12243ceb;
-    padding: 0px 30px 30px 30px;
-      border-radius: 20px;
-}
-.box2 {
- display: flex;
- flex-direction: column;
   background: #12243ceb;
   padding: 0px 30px 30px 30px;
-    border-radius: 20px;
+  border-radius: 20px;
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  background: #12243ceb;
+  padding: 0px 30px 30px 30px;
+  border-radius: 20px;
 }
 
 .boxes {
@@ -64,11 +64,10 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-
 }
 
 .joinChatContainer h3 {
-font-size: 2rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   background-color: #12141826;
   border-radius: 20px 20px 10px 10px;
@@ -100,17 +99,17 @@ font-size: 2rem;
   color: #fff;
   cursor: pointer;
 }
-.roomcode p{
-    width: 194px;
-      height: 24px;
-      margin: 0px 0px 0px 1px;
-      border-radius: 5px;
-      padding: 8px 8px 5px 8px;
-      font-size: 16px;
-      background: #152b7e1c;
-      color: #fff;
-      border: 1px solid #ffffff52;
-      cursor: pointer;
+.roomcode p {
+  width: 194px;
+  height: 24px;
+  margin: 0px 0px 0px 1px;
+  border-radius: 5px;
+  padding: 8px 8px 5px 8px;
+  font-size: 16px;
+  background: #152b7e1c;
+  color: #fff;
+  border: 1px solid #ffffff52;
+  cursor: pointer;
 }
 .joinChatContainer button:hover {
   background: #2e7d32;
@@ -135,7 +134,7 @@ font-size: 2rem;
   cursor: pointer;
 }
 
-.chat-header{
+.chat-header {
   display: flex;
   justify-content: flex-start;
 }
@@ -156,7 +155,6 @@ font-size: 2rem;
   background-repeat: no-repeat;
   background-size: cover;
 
-
   position: relative;
 }
 
@@ -166,7 +164,7 @@ font-size: 2rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }
-#green{
+#green {
   color: #70e460;
 }
 .chat-window .chat-body .message-container::-webkit-scrollbar {
@@ -199,7 +197,7 @@ font-size: 2rem;
   min-width: 50px;
   background-color: #b3b3b357;
   color: white;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: flex;
   margin-right: 5px;
   margin-left: 5px;
@@ -331,7 +329,6 @@ font-size: 2rem;
   color: #fff;
   z-index: 5;
   border-bottom: 1px solid #ffffff24;
-
 }
 
 .nav h2 {
@@ -347,7 +344,6 @@ font-size: 2rem;
 #author1 {
   color: white;
   margin-bottom: 5px;
-
 }
 
 ::-webkit-scrollbar {
@@ -365,78 +361,77 @@ font-size: 2rem;
 ::-webkit-scrollbar-thumb:hover {
   background: #0b293cc6;
 }
-button:disabled,button:disabled:hover,
+button:disabled,
+button:disabled:hover,
 button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
-  
 }
 
-h2,p{
+h2,
+p {
   color: #f6f6f6;
-
 }
 
-.roomcode{
-display: flex;
+.roomcode {
+  display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0px 7px 7px 7px;
-
 }
 
-.roomcode button{
-width: 85px;
+.roomcode button {
+  width: 85px;
   background-color: #2e7d32;
   color: #c7c7c7;
   height: 40px;
 }
-.room-id{
+.room-id {
   background-color: white;
   color: black;
   padding: 8px 5px;
   width: 100%;
-  
+
   border-radius: 5px;
   font-weight: 500;
 }
 
 @media (max-width: 700px) {
-  .App{
+  .App {
     overflow-y: auto;
   }
-  .main-page{
+  .main-page {
     flex-direction: column;
     height: 100%;
     margin-top: 80px;
     position: relative;
   }
-  .nav{
+  .nav {
     position: relative;
   }
-  .joinbox{
+  .joinbox {
     flex-direction: column;
     padding: 0px;
   }
-.tools-section {
-  text-align: center;
-  font-size: 12px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  grid-gap: 2em;
-  gap: 0em;
-  align-items: center;
-  display: none;
-}
-  .chat-window{
+  .tools-section {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    grid-gap: 2em;
+    gap: 0em;
+    align-items: center;
+    display: none;
+  }
+  .chat-window {
     height: 100vh;
   }
-    .joinChatContainer {
-      display: flex;
-padding: 0px;
-      border-radius: 20px;
-      margin-top: 30px;
-    }
+  .joinChatContainer {
+    display: flex;
+    padding: 0px;
+    border-radius: 20px;
+    margin-top: 30px;
+  }
 }
