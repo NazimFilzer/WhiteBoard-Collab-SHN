@@ -117,7 +117,7 @@ font-size: 2rem;
 }
 
 .chat-window {
-  width: 300px;
+  min-width: 300px;
   height: 100%;
   background: #263238;
   border-radius: 9px;
@@ -400,11 +400,14 @@ width: 85px;
   font-weight: 500;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
+  .App{
+    overflow-y: auto;
+  }
   .main-page{
     flex-direction: column;
     height: 100%;
-    margin-top: 260px;
+    margin-top: 80px;
     position: relative;
   }
   .nav{
@@ -414,9 +417,17 @@ width: 85px;
     flex-direction: column;
     padding: 0px;
   }
-.tools-section{
-     display: none;
-  }
+.tools-section {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  grid-gap: 2em;
+  gap: 0em;
+  align-items: center;
+  display: none;
+}
   .chat-window{
     height: 100vh;
   }
