@@ -409,6 +409,7 @@ width: 85px;
   }
   .joinbox{
     flex-direction: column;
+    padding: 0px;
   }
 .tools-section{
      display: none;
@@ -416,4 +417,10 @@ width: 85px;
   .chat-window{
     height: 100vh;
   }
+    .joinChatContainer {
+      display: flex;
+padding: 0px;
+      border-radius: 20px;
+      margin-top: 111px;
+    }
 }
