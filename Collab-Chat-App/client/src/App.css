@@ -100,16 +100,16 @@ body {
   cursor: pointer;
 }
 .roomcode p{
-  width: 203px;
-    height: 24px;
-    margin: 7px;
-    border-radius: 5px;
-    padding: 10px 8px 5px 8px;
-    font-size: 16px;
-    background: #152b7e1c;
-    color: #fff;
-    border: 1px solid #ffffff52;
-    cursor: pointer;
+    width: 194px;
+      height: 24px;
+      margin: 0px 0px 0px 1px;
+      border-radius: 5px;
+      padding: 10px 8px 5px 8px;
+      font-size: 16px;
+      background: #152b7e1c;
+      color: #fff;
+      border: 1px solid #ffffff52;
+      cursor: pointer;
 }
 .joinChatContainer button:hover {
   background: #2e7d32;
@@ -376,9 +376,10 @@ h2,p{
 }
 
 .roomcode{
-  display: flex;
+display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 0px 7px 7px 7px;
 
 }
 
