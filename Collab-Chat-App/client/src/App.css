@@ -404,6 +404,16 @@ width: 85px;
   .main-page{
     flex-direction: column;
     height: 100%;
-    margin-top: 82px;
+    margin-top: 260px;
+    position: relative;
+  }
+  .joinbox{
+    flex-direction: column;
+  }
+.tools-section{
+     display: none;
+  }
+  .chat-window{
+    height: 100vh;
   }
 }
