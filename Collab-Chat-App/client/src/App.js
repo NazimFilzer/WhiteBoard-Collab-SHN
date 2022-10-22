@@ -10,6 +10,7 @@ const socket = io.connect("http://localhost:3001/");
 function App() {
   const uniqueId = nanoid(4);
   const [username, setUsername] = useState("");
+  const[password,setPassword]=useState("");
   const [room, setRoom] = useState(uniqueId);
   const [showChat, setShowChat] = useState(false);
   const [roomBool, setRoomBool] = useState(true);
@@ -36,9 +37,9 @@ function App() {
   
   const signup=() =>
   {
-    if(username !=="")
+    if(username !=="" && password !=="")
     {
-      socket.emit("database",username);
+      socket.emit("database",{username,password});
     }
 
   }
@@ -83,6 +84,10 @@ function App() {
                     setUsername(event.target.value);
                   }}
                 />
+                 <input type="text" placeholder="password" onChange={(event) => {
+                    setPassword(event.target.value);
+                  }} />
+
 
                 <input
                   type="text"
