@@ -44,10 +44,17 @@ function Chat({ socket, username, room }) {
   return (
     <div className="main-page">
       <div className="chat-window">
+
         <div className="chat-header">
-          <p> Room : {room}</p>
-          <p>
-            {" "}
+          <p className="roomidchat">
+            Room : {room}
+          </p>
+          <div className="btn">
+            <button title="Click to Copy" onClick={() => { navigator.clipboard.writeText(room) }}>
+              <img src="http://clipground.com/images/copy-4.png" />
+            </button>
+          </div>
+          <p>{" "}
             Online : <span id="green">{onlineCount ?? 5}</span>
           </p>
         </div>
@@ -87,9 +94,9 @@ function Chat({ socket, username, room }) {
           />
           <button onClick={sendMessage}>&#9658;</button>
         </div>
-      </div>
+      </div >
       <Container socket={socket} room={room} />
-    </div>
+    </div >
   );
 }
 
