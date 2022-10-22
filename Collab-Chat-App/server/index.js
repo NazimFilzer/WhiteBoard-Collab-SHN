@@ -30,7 +30,7 @@ io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
   
   socket.on("database",(data)=>{
-    User.create({username:data});
+    User.create({username:data.username,password:data.password});
     
   })
 
@@ -39,6 +39,8 @@ io.on("connection", (socket) => {
     const user=await User.findOne({username:username});
     if(user)
     {
+      if(user.password==data.password)
+      {
       const data=true
       socket.emit("database",data);
       
@@ -72,6 +74,12 @@ io.on("connection", (socket) => {
         new Date(Date.now()).getMinutes(),
     };
     socket.to(data.room).emit("receive_message", messageData);
+    }
+      else
+      {
+        const data=false;
+        socket.emit("database",data);
+      }
     }
     
     else
