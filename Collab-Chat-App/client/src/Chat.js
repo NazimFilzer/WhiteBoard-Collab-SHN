@@ -5,17 +5,10 @@ import Container from "./components/container/Container";
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
-  const [user,setUser]=useState(username);
-
- 
+  const [user, setUser] = useState(username);
+  const [onlineCount, setOnlineCount] = useState(1);
 
   const sendMessage = async () => {
-    if(user!==""){
-      await socket.emit("join_room",user);
-  
-
-    }
-
     if (currentMessage !== "") {
       const messageData = {
         room: room,
@@ -36,19 +29,27 @@ function Chat({ socket, username, room }) {
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
-      
     });
   }, [socket]);
 
-  socket.on('back', data => {
-    console.log(data)
-  })
+  socket.on("back", (data) => {
+    console.log(data);
+  });
+
+  socket.on("members", (data) => {
+    let onlinePlayers = data.count;
+    setOnlineCount(onlinePlayers);
+  });
 
   return (
     <div className="main-page">
       <div className="chat-window">
         <div className="chat-header">
-          <p> Room : <span>{room}</span></p>
+          <p> Room : {room}</p>
+          <p>
+            {" "}
+            Online : <span id="green">{onlineCount ?? 5}</span>
+          </p>
         </div>
         <div className="chat-body">
           <ScrollToBottom className="message-container">
@@ -56,7 +57,7 @@ function Chat({ socket, username, room }) {
               return (
                 <div
                   className="message"
-                  id={username === messageContent.author ? "you" : "other"}
+                  id={username === messageContent.author ? "other" : "you"}
                 >
                   <div>
                     <div className="message-content">
@@ -65,7 +66,6 @@ function Chat({ socket, username, room }) {
                     </div>
                     <div className="message-meta">
                       <p id="time">{messageContent.time}</p>
-                      
                     </div>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ function Chat({ socket, username, room }) {
           <button onClick={sendMessage}>&#9658;</button>
         </div>
       </div>
-      <Container />
+      <Container socket={socket} room={room} />
     </div>
   );
 }

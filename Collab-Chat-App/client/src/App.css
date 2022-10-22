@@ -9,7 +9,7 @@
   background: url(/src/img/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
+  overflow-y: hidden;
 }
 
 body {
@@ -30,18 +30,31 @@ body {
 
 .joinbox {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
-  background: #12243ceb;
   padding: 0px 30px 30px 30px;
   border-radius: 20px;
+  gap: 30px;
 }
 
 .joinbox h3 {
   color: #fff;
 }
-
-.twoboxes {}
+.box1 {
+  display: flex;
+  flex-direction: column;
+  background: #12243ceb;
+  padding: 0px 30px 30px 30px;
+  border-radius: 20px;
+  /* text-align: center; */
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  background: #12243ceb;
+  padding: 0px 30px 30px 30px;
+  border-radius: 20px;
+}
 
 .boxes {
   width: 100%;
@@ -52,14 +65,14 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-
 }
 
 .joinChatContainer h3 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  background-color: #12141887;
-  border-radius: 20px 20px 0px 0px;
+  background-color: #12141826;
+  border-radius: 20px 20px 10px 10px;
+  color: #ffffffd6;
   padding: 10px;
 }
 
@@ -87,13 +100,24 @@ body {
   color: #fff;
   cursor: pointer;
 }
-
+.roomcode p {
+  width: 194px;
+  height: 24px;
+  margin: 0px 0px 0px 1px;
+  border-radius: 5px;
+  padding: 8px 8px 5px 8px;
+  font-size: 16px;
+  background: #152b7e1c;
+  color: #fff;
+  border: 1px solid #ffffff52;
+  cursor: pointer;
+}
 .joinChatContainer button:hover {
   background: #2e7d32;
 }
 
 .chat-window {
-  width: 300px;
+  min-width: 300px;
   height: 100%;
   background: #263238;
   border-radius: 9px;
@@ -111,6 +135,10 @@ body {
   cursor: pointer;
 }
 
+.chat-header {
+  display: flex;
+  justify-content: flex-start;
+}
 .chat-window .chat-header p {
   display: block;
   padding: 0 1em 0 2em;
@@ -128,7 +156,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
-
   position: relative;
 }
 
@@ -138,9 +165,24 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
+#green {
+  color: #70e460;
+}
 .chat-window .chat-body .message-container::-webkit-scrollbar {
   display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #122b3bba;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0b293cc6;
 }
 
 .chat-window .chat-body .message {
@@ -156,7 +198,7 @@ body {
   min-width: 50px;
   background-color: #b3b3b357;
   color: white;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: flex;
   margin-right: 5px;
   margin-left: 5px;
@@ -288,7 +330,6 @@ body {
   color: #fff;
   z-index: 5;
   border-bottom: 1px solid #ffffff24;
-
 }
 
 .nav h2 {
@@ -304,5 +345,106 @@ body {
 #author1 {
   color: white;
   margin-bottom: 5px;
-
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #122b3bba;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0b293cc6;
+}
+button:disabled,
+button:disabled:hover,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+h2,
+p {
+  color: #f6f6f6;
+}
+
+.roomcode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 7px 7px 7px;
+}
+
+.roomcode button {
+  width: 85px;
+  background-color: #2e7d32;
+  color: #c7c7c7;
+  height: 40px;
+}
+.room-id {
+  background-color: white;
+  color: black;
+  padding: 8px 5px;
+  width: 100%;
+
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .App {
+    overflow-y: auto;
+  }
+  .main-page {
+    flex-direction: column;
+    height: 100%;
+    margin-top: 80px;
+    position: relative;
+  }
+  .nav {
+    position: relative;
+  }
+  .joinbox {
+    flex-direction: column;
+    padding: 0px;
+  }
+  .tools-section {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    grid-gap: 2em;
+    gap: 0em;
+    align-items: center;
+    display: none;
+  }
+  .chat-window {
+    height: 100vh;
+  }
+  .joinChatContainer {
+    display: flex;
+    padding: 0px;
+    border-radius: 20px;
+    margin-top: 30px;
+  }
+}
+
+/* copy to clipboard button Css */
+img { 
+  max-width: 25%;
+}
+.copy-icon {
+  padding: 30% 5% 3% 0 ;
+  margin: 5% 10% 5% 0%;
+}
+ .roomcode button:hover {
+  background: #152b7e;
+ }
