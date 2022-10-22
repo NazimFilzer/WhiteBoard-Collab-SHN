@@ -5,7 +5,13 @@ const UserSchema=new mongoose.Schema({
 username:
 {
 type:String
+},
+password:
+{
+  type:String
 }
+
+
 
 
 });
