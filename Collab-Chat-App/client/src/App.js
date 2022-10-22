@@ -18,7 +18,13 @@ function App() {
     if (username !== "" && room !== "") {
       const joinData = { room, username };
       socket.emit("join_room", joinData);
-      setShowChat(true);
+      socket.on("database",(data)=>
+      {
+        setShowChat(data);
+        
+      }
+);
+      
     }
   };
 
@@ -27,6 +33,16 @@ function App() {
     setRoom(uniqueId);
     setRoomBool(false);
   };
+  
+  const signup=() =>
+  {
+    if(username !=="")
+    {
+      socket.emit("database",username);
+    }
+
+  }
+
 
   return (
     <div className="App">
@@ -76,6 +92,8 @@ function App() {
                   }}
                 />
                 <button onClick={joinRoom}>Enter Room</button>
+                <button onClick={signup}>Signup</button>
+
               </div>
             </div>
           </div>
