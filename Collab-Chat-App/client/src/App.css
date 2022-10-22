@@ -46,6 +46,7 @@ body {
   background: #12243ceb;
   padding: 0px 30px 30px 30px;
   border-radius: 20px;
+  /* text-align: center; */
 }
 .box2 {
   display: flex;
@@ -435,3 +436,15 @@ p {
     margin-top: 30px;
   }
 }
+
+/* copy to clipboard button Css */
+img { 
+  max-width: 25%;
+}
+.copy-icon {
+  padding: 30% 5% 3% 0 ;
+  margin: 5% 10% 5% 0%;
+}
+ .roomcode button:hover {
+  background: #152b7e;
+ }
