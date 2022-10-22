@@ -6,12 +6,10 @@ A Collabration Web-App using Express, React and Socket.io where Multiple People 
 ## Table of Contents
 1. [What is Collaber](#project-description)
 2. [Team Members](#team-members)
-3. [How does it work?](#working)
-4. [Key Features](#key-features)
-5. [Technologies](#technologies)
-6. [Project Demo](#project-demo)
-7. [Installation](#installation)
-8. [Dependencies](#dependencies)
+3. [Key Features](#key-features)
+4. [Project Demo](#project-demo)
+5. [Installation](#installation)
+6. [Dependencies](#dependencies)
 
 
 ## What is Collaber?
@@ -23,19 +21,11 @@ A Collabration Web-App using Express, React and Socket.io where Multiple People 
 1. [Muhammed Jamal P](https://github.com/jamaljm/)
 1. [Jozef Antony Neelamkavil](https://github.com/jzf21/) 
 
-## How does it work? 
-It uses...
 
 ## Key Features 
 - [x] **Fully Opensource**
 - [x] **Easy setup**
 	 - With an easy 3 steps guided setup process, setup is easier than you can imagine.
-
-## Technologies:
-
-Reactjs for Front-End, Expressjs for Backend and Socket.io
-
-A Collabration Web-App using Express, React and Socket.io where Multiple People can Join a Private room and Chat, Add Images and Draw Among themselves
 
 ## 🔧 Project Demo:
 
