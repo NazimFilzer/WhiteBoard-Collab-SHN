@@ -1,6 +1,7 @@
 # **<div align="center">Collaber</div>**  
 A Collabration Web-App using Express, React and Socket.io where Multiple People can Join a Private room and Chat, Add Images and Draw Among themselves
 
+https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white 	https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white	https://img.shields.io/badge/Socket.io-010101?&style=for-the-badge&logo=Socket.io&logoColor=white
 ## Table of Contents
 1. [What is Collaber](#project-description)
 2. [Team Members](#team-members)
