@@ -51,7 +51,10 @@ function App() {
 
                 <div className="roomcode">
                   <p className="room-id">{room}</p>
-                  <button onClick={createid}>Generate</button>
+                  <button title="Click to Copy" onClick={() => { navigator.clipboard.writeText(room) }}>
+                    <span className="copy-icon">Copy</span>
+                    <img src="http://clipground.com/images/copy-4.png" />
+                  </button>
                 </div>
               </div>
               <div className="box2">
