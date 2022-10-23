@@ -34,25 +34,25 @@ body {
   text-align: center;
   padding: 0px 30px 30px 30px;
   border-radius: 20px;
-    gap: 30px;
+  gap: 30px;
 }
 
 .joinbox h3 {
   color: #fff;
 }
-.box1{
+.box1 {
   display: flex;
   flex-direction: column;
-    background: #12243ceb;
-    padding: 0px 30px 30px 30px;
-      border-radius: 20px;
-}
-.box2 {
- display: flex;
- flex-direction: column;
   background: #12243ceb;
   padding: 0px 30px 30px 30px;
-    border-radius: 20px;
+  border-radius: 20px;
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  background: #12243ceb;
+  padding: 0px 30px 30px 30px;
+  border-radius: 20px;
 }
 
 .boxes {
@@ -64,7 +64,6 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-
 }
 
 .joinChatContainer h3 {
@@ -99,17 +98,17 @@ body {
   color: #fff;
   cursor: pointer;
 }
-.roomcode p{
+.roomcode p {
   width: 203px;
-    height: 24px;
-    margin: 7px;
-    border-radius: 5px;
-    padding: 10px 8px 5px 8px;
-    font-size: 16px;
-    background: #152b7e1c;
-    color: #fff;
-    border: 1px solid #ffffff52;
-    cursor: pointer;
+  height: 24px;
+  margin: 7px;
+  border-radius: 5px;
+  padding: 10px 8px 5px 8px;
+  font-size: 16px;
+  background: #152b7e1c;
+  color: #fff;
+  border: 1px solid #ffffff52;
+  cursor: pointer;
 }
 .joinChatContainer button:hover {
   background: #2e7d32;
@@ -134,7 +133,7 @@ body {
   cursor: pointer;
 }
 
-.chat-header{
+.chat-header {
   display: flex;
   justify-content: flex-start;
 }
@@ -154,7 +153,6 @@ body {
   background: url(/src/img/chat.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
 
   position: relative;
 }
@@ -196,7 +194,7 @@ body {
   min-width: 50px;
   background-color: #b3b3b357;
   color: white;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: flex;
   margin-right: 5px;
   margin-left: 5px;
@@ -328,7 +326,6 @@ body {
   color: #fff;
   z-index: 5;
   border-bottom: 1px solid #ffffff24;
-
 }
 
 .nav h2 {
@@ -344,7 +341,6 @@ body {
 #author1 {
   color: white;
   margin-bottom: 5px;
-
 }
 
 ::-webkit-scrollbar {
@@ -362,38 +358,84 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #0b293cc6;
 }
-button:disabled,button:disabled:hover,
+button:disabled,
+button:disabled:hover,
 button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
-  
 }
 
-h2,p{
+h2,
+p {
   color: #f6f6f6;
-
 }
 
-.roomcode{
+.roomcode {
   display: flex;
   flex-direction: row;
   align-items: center;
-
 }
 
-.roomcode button{
-width: 85px;
+.roomcode button {
+  width: 85px;
   background-color: #2e7d32;
   color: #c7c7c7;
   height: 40px;
 }
-.room-id{
+.room-id {
   background-color: white;
   color: black;
   padding: 8px 5px;
   width: 100%;
-  
+
   border-radius: 5px;
   font-weight: 500;
+}
+
+@media only screen and (max-width: 480px) {
+  .App {
+    width: 100vw;
+    height: 120vh;
+  }
+
+  .joinChatContainer {
+    padding: 0px;
+  }
+
+  .joinChatContainer h3{
+    font-size: 1rem;
+    width: 235px;
+  }
+
+  .joinChatContainer input{
+    width: 235px ;
+  }
+
+  .joinChatContainer button{
+    width: 250px;
+  }
+  .joinbox {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0px 15px 30px 15px;
+    border-radius: 20px;
+    gap: 30px;
+  }
+
+  .box1 {
+    padding: 10px;
+    min-width: 270px;
+  }
+
+  .box2 {
+    padding: 10px;
+    min-width: 270px;
+  }
+
+  .roomcode{
+    width: 265px;
+  }
 }
