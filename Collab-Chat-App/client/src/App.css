@@ -403,16 +403,16 @@ p {
     padding: 0px;
   }
 
-  .joinChatContainer h3{
+  .joinChatContainer h3 {
     font-size: 1rem;
     width: 235px;
   }
 
-  .joinChatContainer input{
-    width: 235px ;
+  .joinChatContainer input {
+    width: 235px;
   }
 
-  .joinChatContainer button{
+  .joinChatContainer button {
     width: 250px;
   }
   .joinbox {
@@ -435,7 +435,12 @@ p {
     min-width: 270px;
   }
 
-  .roomcode{
+  .roomcode {
     width: 265px;
+  }
+
+  .main-page {
+    flex-direction: column;
+    margin-top: 0;
   }
 }
