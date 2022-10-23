@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import Container from "./components/container/Container";
-
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -44,10 +44,16 @@ function Chat({ socket, username, room }) {
   return (
     <div className="main-page">
       <div className="chat-window">
+
         <div className="chat-header">
-          <p> Room : {room}</p>
-          <p>
-            {" "}
+          <p className="roomidchat">
+            Room :
+            {room}
+          </p>
+          <div className="btn">
+            <ContentCopyIcon onClick={() => { navigator.clipboard.writeText(room) }} style={{ color: "#FFF" }}></ContentCopyIcon>
+          </div>
+          <p>{" "}
             Online : <span id="green">{onlineCount ?? 5}</span>
           </p>
         </div>
@@ -87,9 +93,9 @@ function Chat({ socket, username, room }) {
           />
           <button onClick={sendMessage}>&#9658;</button>
         </div>
-      </div>
+      </div >
       <Container socket={socket} room={room} />
-    </div>
+    </div >
   );
 }
 

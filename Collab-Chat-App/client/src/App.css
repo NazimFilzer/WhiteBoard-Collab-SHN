@@ -137,7 +137,8 @@ body {
 
 .chat-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+
 }
 .chat-window .chat-header p {
   display: block;
@@ -388,6 +389,15 @@ p {
   color: #c7c7c7;
   height: 40px;
 }
+ .btn {
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      padding: 0  0  5rem 0 ;
+      max-width: 10%;
+      margin-top: .60rem;
+ }
+
 .room-id {
   background-color: white;
   color: black;
@@ -438,13 +448,26 @@ p {
 }
 
 /* copy to clipboard button Css */
-img { 
+img {
   max-width: 25%;
 }
+
+.btn img { 
+  max-width: 100%;
+}
+
 .copy-icon {
   padding: 30% 5% 3% 0 ;
   margin: 5% 10% 5% 0%;
 }
  .roomcode button:hover {
   background: #152b7e;
+ }
+ .btn   :hover{  
+  color: #000;
+ }
+
+ .roomidchat{
+    
+    align-items: center;
  }
