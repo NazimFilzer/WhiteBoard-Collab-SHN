@@ -463,8 +463,8 @@ img {
  .roomcode button:hover {
   background: #152b7e;
  }
- .btn   :hover{
-  background:cadetblue;
+ .btn   :hover{  
+  color: #000;
  }
 
  .roomidchat{
