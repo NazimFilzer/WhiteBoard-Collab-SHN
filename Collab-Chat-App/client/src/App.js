@@ -3,6 +3,8 @@ import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 import { nanoid } from "nanoid";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // const socket = io.connect("https://collaber-whiteboard.herokuapp.com/");
 const socket = io.connect("http://localhost:3001/");
@@ -28,6 +30,12 @@ function App() {
     setRoomBool(false);
   };
 
+  const notify = () => toast.success('Copied to Clipboard', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "light", });
+  const handleClick = event => {
+    navigator.clipboard.writeText(room)
+    notify()
+  };
+
   return (
     <div className="App">
       <div className="nav">
@@ -51,9 +59,23 @@ function App() {
 
                 <div className="roomcode">
                   <p className="room-id">{room}</p>
-                  <button title="Click to Copy" onClick={() => { navigator.clipboard.writeText(room) }}>
+                  <button title="Click to Copy" onClick={handleClick} >
                     <span className="copy-icon">Copy</span>
                     <img src="http://clipground.com/images/copy-4.png" />
+                    <div>
+                      <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss={false}
+                        draggable
+                        pauseOnHover
+                        theme="light"
+                      />
+                    </div>
                   </button>
                 </div>
               </div>
