@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import Container from "./components/container/Container";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [user, setUser] = useState(username);
   const [onlineCount, setOnlineCount] = useState(1);
-
   const sendMessage = async () => {
     if (currentMessage !== "") {
       const messageData = {
@@ -41,13 +43,39 @@ function Chat({ socket, username, room }) {
     setOnlineCount(onlinePlayers);
   });
 
+  const notify = () => toast.success('Copied to Clipboard', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "light", });
+  const handleClick = event => {
+    navigator.clipboard.writeText(room)
+    notify()
+  };
   return (
     <div className="main-page">
       <div className="chat-window">
+
         <div className="chat-header">
-          <p> Room : {room}</p>
-          <p>
-            {" "}
+          <p className="roomidchat">
+            Room :
+            {room}
+          </p>
+          <div className="btn" onClick={handleClick} style={{ color: "#FFF" }}>
+
+            <div>
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
+                theme="light"
+              />
+            </div>
+            <ContentCopyIcon></ContentCopyIcon>
+          </div>
+          <p>{" "}
             Online : <span id="green">{onlineCount ?? 5}</span>
           </p>
         </div>
@@ -87,9 +115,9 @@ function Chat({ socket, username, room }) {
           />
           <button onClick={sendMessage}>&#9658;</button>
         </div>
-      </div>
+      </div >
       <Container socket={socket} room={room} />
-    </div>
+    </div >
   );
 }
 
