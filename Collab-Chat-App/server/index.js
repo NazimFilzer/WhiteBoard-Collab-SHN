@@ -3,6 +3,9 @@ const app = express();
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
+const User=require("./model.js");
+
+
 app.use(cors());
 
 const server = http.createServer(app);
@@ -25,8 +28,27 @@ io.on("connection", (socket) => {
   //adding this new connection to connections set
   connections.add(socket);
   console.log(`User Connected: ${socket.id}`);
+  
+  socket.on("database",(data)=>{
+    User.create({username:data.username,password:data.password});
+    
+  })
 
   socket.on("join_room", async (data) => {
+    
+    const user=await User.findOne({username:username});
+    if(user)
+    {
+      if(user.password==data.password)
+      {
+      const data=true
+      socket.emit("database",data);
+      
+    
+   
+
+    
+    
     console.log(`User with ID: ${socket.id} joined room: ${data}`);
     let roomId = data.room;
     socket.join(roomId);
@@ -52,6 +74,27 @@ io.on("connection", (socket) => {
         new Date(Date.now()).getMinutes(),
     };
     socket.to(data.room).emit("receive_message", messageData);
+    }
+      else
+      {
+        const data=false;
+        socket.emit("database",data);
+      }
+    }
+    
+    else
+    {
+      const data=false;
+      socket.emit("database",data);
+      
+      
+    }
+      
+     
+      
+      
+      
+      
   });
 
   socket.on("send_message", (data) => {
