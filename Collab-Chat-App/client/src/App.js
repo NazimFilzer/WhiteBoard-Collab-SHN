@@ -13,6 +13,7 @@ const socket = io.connect("https://collaber-server.onrender.com/");
 function App() {
   const uniqueId = nanoid(4);
   const [username, setUsername] = useState("");
+  const[password,setPassword]=useState("");
   const [room, setRoom] = useState(uniqueId);
   const [showChat, setShowChat] = useState(false);
   const [roomBool, setRoomBool] = useState(true);
@@ -21,7 +22,13 @@ function App() {
     if (username !== "" && room !== "") {
       const joinData = { room, username };
       socket.emit("join_room", joinData);
-      setShowChat(true);
+      socket.on("database",(data)=>
+      {
+        setShowChat(data);
+        
+      }
+);
+      
     }
   };
 
@@ -30,6 +37,16 @@ function App() {
     setRoom(uniqueId);
     setRoomBool(false);
   };
+  
+  const signup=() =>
+  {
+    if(username !=="" && password !=="")
+    {
+      socket.emit("database",{username,password});
+    }
+
+  }
+
 
   const notify = () => toast.success('Copied to Clipboard', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "light", });
   const handleClick = event => {
@@ -72,23 +89,28 @@ function App() {
                 <div className="box2">
                   <h3>Join A Room</h3>
 
-                  <input
-                    type="text"
-                    placeholder="John..."
-                    onChange={(event) => {
-                      setUsername(event.target.value);
-                    }}
-                  />
+                <input
+                  type="text"
+                  placeholder="John..."
+                  onChange={(event) => {
+                    setUsername(event.target.value);
+                  }}
+                />
+                 <input type="text" placeholder="password" onChange={(event) => {
+                    setPassword(event.target.value);
+                  }} />
 
-                  <input
-                    type="text"
-                    placeholder="Room ID..."
-                    onChange={(event) => {
-                      setRoom(event.target.value);
-                    }}
-                  />
-                  <button onClick={joinRoom}>Enter Room</button>
-                </div>
+
+                <input
+                  type="text"
+                  placeholder="Room ID..."
+                  onChange={(event) => {
+                    setRoom(event.target.value);
+                  }}
+                />
+                <button onClick={joinRoom}>Enter Room</button>
+                <button onClick={signup}>Signup</button>
+
               </div>
             </div>
           ) : (
